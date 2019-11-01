@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>MIS3502 Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap 4 References -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- Link to FontAwesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="css/app.css">
+    <!-- Your custom JavaScript -->
+    <script src="js/app.js"></script>
+
+    <!-- Link to image for the favicon -->
+    <link rel="icon" href="images/TU100x100.png">
+</head>
+
+<body>
+
+<!-- Top Navigation Bar -->
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <!-- Logo -->
+      <a class ="navbar-brand" href="index.html">
+          <img alt="MIS3502 - TO Logo" src="images/TU100x100.png" style="width:40px;">
+          &nbsp;&nbsp;MIS3502
+      </a>
+
+    <!-- Toggler Icon for responsiveness -->
+    <button id="toggle-icon" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <!--Menu sets on the left -->
+        <ul class="navbar-nav mr-auto">
+        </ul>
+    <!--Menu sets on the right -->
+    <!--Each individual item can be secured by adding the class: secured -->
+        <ul class="navbar-nav ml-auto">
+                <li class="nav-item secured">
+                    <a class="nav-link" href="#div-ABC"><i class="fa fa-list"></i> ABC Links </a>
+                </li>
+                <li class="nav-item secured">
+                    <a class="nav-link" href="#div-AAA"><i class="fa fa-link"></i> Option AAA </a>
+                </li>
+                <li class="nav-item secured">
+                    <a class="nav-link" href="#div-BBB"><i class="fa fa-link"></i> Option BBB </a>
+                </li>
+                <li class="nav-item secured">
+                    <a class="nav-link" href="#div-CCC"><i class="fa fa-link"></i> Option CCC </a>
+                </li>
+                <li class="nav-item secured">
+                    <a class="nav-link" href="#div-login"><i class="fa fa-sign-out"></i>Logout</a>
+                </li>
+        </ul>
+    </div>
+</nav>
+
+<br><br><br><br>
+
+<!--Start container for BS4 (Bootstrap 4) formatting-->
+<div class="container-fluid">
+
+    <div class="row text-center">
+        <div class="col-md-12">
+			&nbsp; <!-- place holder for additional top row content -->
+        </div>
+    </div>
+
+    <div class="row">
+    <div class="col-md-2"></div>
+
+        <div class="col-md-8 content-wrapper " id="div-login" style="display: none;">
+            <div class="text-center">
+                <h1>Sign In</h1>
+            </div>
+                <form id='form-login'>
+				<label for="username">User name:</label>
+				<input type="text" name="username" id="username" class="form-control" >
+				<label for="password">Password:</label>
+                <input type="password" name="password" id="password" class="form-control" >
+                <br>
+				<div class="text-center">
+				<input type="button" value="Login" name="btnLogin" id="btnLogin" class="btn btn-primary" style="font-size:2em;width:100%;" >
+                </div>
+                <br>
+                <div id='login_message' class="alert alert-danger text-center" style="display:none;">
+                </div>
+			</form>
+        </div>
+        
+
+        <div class="col-md-8 content-wrapper " id="div-dashboard"  style="display: none;">
+            <div class="text-center">
+                <h1>Renter Dashboard</h1>
+            </div>
+            <div class="list-group">
+                <div class="list-group-item list-group-item-action active"><b>Properties</b></div>
+                <a href="#prop" class="list-group-item list-group-item-action">Search for Properties<i class="fa fa-angle-double-right pull-right"></i></a>
+                <a class="list-group-item list-group-item-action">My Rental Applications<i class="fa fa-angle-double-right pull-right"></i></a>
+                </div>
+                <br>
+            <div class="list-group">
+                <div class="list-group-item list-group-item-action active"><b>Account</b></div>
+                <a class="list-group-item list-group-item-action">Update Profile<i class="fa fa-angle-double-right pull-right"></i></a>
+                <a class="list-group-item list-group-item-action">Logout<i class="fa fa-angle-double-right pull-right"></i></a>
+                </div>
+        </div>
+
+
+		<div class="col-md-8 content-wrapper " id="div-welcome" style="display: none;">
+			<div class="text-center">
+                <h1>Welcome to RentZen</h1>
+                <p><em>Our Mission? </em>Bring zen to renting. </p>
+            </div>
+            <p>RentZen provides a digital experience for landlords to find qualified tenants and renters    to find the home of their dreams without the hassle of in-person showings. It's an            all-in-one platform for renting homes and apartments. RentZen connects landlords and          renters via an easy to use platform that reduces in-person visits to properties, reviews      user qualifications, and streamlines communication between landlords and renters.</p>
+            
+            <div class="text-center">
+                <input type="button" value="Sign Up" name="btnSignup" id="btnSignup" class="btn btn-primary" style="font-size:2em;width:100%;">
+                <br><br>
+		    </div>
+                <input type="button" value="Sign In" name="btnSignin" id="btnSignin" class="btn btn-primary" style="font-size:2em;width:100%;">
+        </div>
+
+		<div class="col-md-8 content-wrapper " id="div-signup" style="display: none;">
+			<div class="text-center">
+                <h1>Renter Sign Up</h1>
+            </div>
+            <form id='form-signup'>
+				<label for="signupusername">User name:</label>
+				<input type="text" name="signupusername" id="signupusername" class="form-control" >
+				<label for="signuppassword">Password:</label>
+                <input type="password" name="signuppassword" id="signuppassword" class="form-control" >
+                <br>
+				<div class="text-center">
+				<input type="button" value="Sign Up" name="btnSignup2" id="btnSignup2" class="btn btn-primary" style="font-size:2em;width:100%;" >
+                </div>
+                <br>
+                <div id='signup_message' class="alert alert-danger text-center" style="display:none;">
+                </div>
+			</form>
+		</div>
+        
+
+        <div class="col-md-8 content-wrapper " id="div-signupconfirm" style="display: none;">
+			<div class="text-center">
+                <h1>Your RentZen account was created.</h1>  
+                <input type="button" value="Sign In" name="btnSignin2" id="btnSignin2" class="btn btn-primary" style="font-size:2em;width:100%;">
+            </div>
+
+		</div>
+
+        <div class="col-md-8 content-wrapper " id="div-propertysearch" style="display: none;">
+			<div class="text-center">
+                <h1>Find your home</h1> 
+                <br>
+                <p class="text-center">Only listed properties can be found here.</p>
+                <br>
+                <form id='form-findproperty'>
+                    <label for="city">City:</label>
+                    <input type="text" name="city" id="city" class="form-control" >
+                    
+                    <br>
+                    <div class="text-center">
+                    <input type="button" value="Search" name="btnSearch" id="btnSearch" class="btn btn-primary" style="font-size:2em;width:100%;" >
+                    </div>
+                    <br>
+                    <div id='searchmessage' class="alert alert-danger text-center" style="display:none;">
+                        <p>There are no listed properties in that city. Please try again.</p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="list-group" id="div-propertylist" style="display: none">
+                <h1>Properties:</h1>
+                <a href="#" class="list-group-item list-group-item-action"><img src="images/houseimg1.jpg"> Property 1</a>
+                    
+                
+            </div>
+            
+        </div>
+		
+
+		<div class="col-md-8 content-wrapper " id="div-CCC" style="display: none;">
+			<div>
+                CCC Content goes here.
+            </div>
+		</div>
+
+    <div class="col-md-2"></div>
+    </div>
+
+<div class="row">
+    <div class="col-md-12 text-center">
+        <div>
+            &nbsp;
+        </div>
+    </div>
+</div>
+
+</div> <!-- container //-->
+
+<br>
+    <div class="container-fluid bg-dark text-white">
+        <div class="row">
+            <div class="col-md-12 text-center">
+            &copy; 2019 MIS3502
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+				&nbsp; <!-- place holder for additional footer content -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
