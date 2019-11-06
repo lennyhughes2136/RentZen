@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-    <title>MIS3502 Template</title>
+    <title>RentZen</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap 4 References -->
@@ -17,7 +17,7 @@
     <script src="js/app.js"></script>
 
     <!-- Link to image for the favicon -->
-    <link rel="icon" href="images/TU100x100.png">
+    <link rel="icon" href="images/favicon.png">
 </head>
 
 <body>
@@ -26,9 +26,9 @@
 
 <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
     <!-- Logo -->
-      <a class ="navbar-brand" href="index.html">
-          <img alt="MIS3502 - TO Logo" src="images/TU100x100.png" style="width:40px;">
-          &nbsp;&nbsp;MIS3502
+      <a class ="navbar-brand" href="#div-dashboard">
+          <img alt="RentZen Logo" src="images/favicon.png" style="width:40px;">
+          &nbsp;&nbsp;RentZen
       </a>
 
     <!-- Toggler Icon for responsiveness -->
@@ -43,6 +43,7 @@
     <!--Menu sets on the right -->
     <!--Each individual item can be secured by adding the class: secured -->
         <ul class="navbar-nav ml-auto">
+            <!--
                 <li class="nav-item secured">
                     <a class="nav-link" href="#div-ABC"><i class="fa fa-list"></i> ABC Links </a>
                 </li>
@@ -55,6 +56,7 @@
                 <li class="nav-item secured">
                     <a class="nav-link" href="#div-CCC"><i class="fa fa-link"></i> Option CCC </a>
                 </li>
+            -->
                 <li class="nav-item secured">
                     <a class="nav-link" href="#div-login"><i class="fa fa-sign-out"></i>Logout</a>
                 </li>
@@ -69,7 +71,9 @@
 
     <div class="row text-center">
         <div class="col-md-12">
-			&nbsp; <!-- place holder for additional top row content -->
+            <br>
+            &nbsp; <!-- place holder for additional top row content -->
+            <img src="images/city.png">
         </div>
     </div>
 
@@ -92,6 +96,7 @@
                 <br>
                 <div id='login_message' class="alert alert-danger text-center" style="display:none;">
                 </div>
+                <input type="hidden" id='renterid' name='renterid'>
 			</form>
         </div>
         
@@ -102,14 +107,14 @@
             </div>
             <div class="list-group">
                 <div class="list-group-item list-group-item-action active"><b>Properties</b></div>
-                <a href="#prop" class="list-group-item list-group-item-action">Search for Properties<i class="fa fa-angle-double-right pull-right"></i></a>
+                <a id="property-search"class="list-group-item list-group-item-action">Search for Properties<i class="fa fa-angle-double-right pull-right"></i></a>
                 <a class="list-group-item list-group-item-action">My Rental Applications<i class="fa fa-angle-double-right pull-right"></i></a>
                 </div>
                 <br>
             <div class="list-group">
                 <div class="list-group-item list-group-item-action active"><b>Account</b></div>
-                <a class="list-group-item list-group-item-action">Update Profile<i class="fa fa-angle-double-right pull-right"></i></a>
-                <a class="list-group-item list-group-item-action">Logout<i class="fa fa-angle-double-right pull-right"></i></a>
+                <a id="dashboard-update" class="list-group-item list-group-item-action">Update Profile<i class="fa fa-angle-double-right pull-right"></i></a>
+                <a id="dashboard-logout" class="list-group-item list-group-item-action">Logout<i class="fa fa-angle-double-right pull-right"></i></a>
                 </div>
         </div>
 
@@ -134,9 +139,9 @@
             </div>
             <form id='form-signup'>
 				<label for="signupusername">User name:</label>
-				<input type="text" name="signupusername" id="signupusername" class="form-control" >
+				<input type="text" name="username" id="signupusername" class="form-control" >
 				<label for="signuppassword">Password:</label>
-                <input type="password" name="signuppassword" id="signuppassword" class="form-control" >
+                <input type="password" name="password" id="signuppassword" class="form-control" >
                 <br>
 				<div class="text-center">
 				<input type="button" value="Sign Up" name="btnSignup2" id="btnSignup2" class="btn btn-primary" style="font-size:2em;width:100%;" >
@@ -180,12 +185,47 @@
             <div class="list-group" id="div-propertylist" style="display: none">
                 <h1>Properties:</h1>
                 <a href="#" class="list-group-item list-group-item-action"><img src="images/houseimg1.jpg"> Property 1</a>
-                    
+                <a href="#" class="list-group-item list-group-item-action">Property 2</a>
                 
             </div>
             
         </div>
-		
+        
+        <div class="col-md-8 content-wrapper " id="div-updateprofile" style="display: none;">
+			<div class="text-center">
+                <h1>Update Renter Profile</h1>
+            </div>
+            <form id='form-update'>
+				<label for="updateusername">User Name:</label>
+				<input type="text" name="username" id="updateusername" class="form-control" >
+				<label for="updatepassword">Password:</label>
+                <input type="password" name="password" id="updatepassword" class="form-control" >
+                <label for="updatefirstname">First Name:</label>
+                <input type="text" name="firstname" id="updatefirstname" class="form-control" >
+                <label for="updatelastname">Last Name:</label>
+                <input type="text" name="lastname" id="updatelastname" class="form-control" >
+                <label for="updatephonenumber">Phone Number:</label>
+                <input type="tel" name="phone" id="updatephonenumber" class="form-control" >
+                <label for="updatecreditscore">Credit Score:</label>
+                <input type="text" name="creditrating" id="updatecreditrating" class="form-control" >
+                <label for="updateincome">Income:</label>
+                <input type="text" name="income" id="updateincome" class="form-control" >
+                <br>
+				<div class="text-center">
+				<input type="button" value="Update" name="btnUpdate" id="btnUpdate" class="btn btn-primary" style="font-size:2em;width:100%;" >
+                </div>
+                <br>
+                <div id='update_message' class="alert alert-danger text-center" style="display:none;">
+                </div>
+            </form>
+            <div class='text-center' id='div-updatesuccess' style='display: none;'>
+                <h1>Congrats!</h1>
+                <br>
+                <p>Your profile has been successfully updated.</p>
+                <br>
+                <input type="button" value="Return to Dashboard" name="btnDashboardReturn" id="btnDashboardReturn" class="btn btn-primary" style="font-size:2em;width:100%;" >
+            </div>
+		</div>
 
 		<div class="col-md-8 content-wrapper " id="div-CCC" style="display: none;">
 			<div>
@@ -210,7 +250,7 @@
     <div class="container-fluid bg-dark text-white">
         <div class="row">
             <div class="col-md-12 text-center">
-            &copy; 2019 MIS3502
+            &copy; RentZen
             </div>
         </div>
         <div class="row">
